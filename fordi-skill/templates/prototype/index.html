@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>پرتوتایپ · {project}</title>
+<!-- The faces named in ux/tokens.css. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss" id="tokens">
+/* filled from ux/tokens.css by: node fordi.mjs tokens */
+</style>
+<style type="text/tailwindcss">
+  /* Global craft only: surfaces the browser draws. Components are styled with utilities in the markup. */
+  @layer base {
+    html { font-family: var(--font-sans); color: var(--color-ink); }
+    .wf-frame { --wf-frame-bg: var(--color-bg); }
+    ::selection { background: var(--color-accent); color: var(--color-accent-ink); }
+    :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+    * { scrollbar-color: var(--color-line) transparent; caret-color: var(--color-accent); }
+  }
+</style>
+<link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+<main class="wf-frame">
+
+  <!-- One section per screen in ux/flows.md; one .state per state that is not N/A, plus "default".
+       Reusable pieces carry data-component="PascalName". Links: data-goto="S2" or "S2/empty". -->
+  <section class="screen" data-screen="S1" data-title="{نام صفحه}">
+    <div class="state" data-state="default">
+    </div>
+  </section>
+
+</main>
+<script src="viewer.js"></script>
+</body>
+</html>

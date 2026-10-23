@@ -1,0 +1,52 @@
+/* fordi viewer: the chrome around the prototype (screen picker, state chips, width toggle, 375 check)
+   and the device frame. Every token is prefixed --wf- so it never collides with the design tokens.
+   Copied by "fordi.mjs scaffold prototype"; never edit the copy by hand. */
+
+:root {
+  --wf-width: 375px;
+  --wf-chrome-bg: #ffffff;
+  --wf-chrome-ink: #1f1f1d;
+  --wf-chrome-muted: #5c5c58;
+  --wf-chrome-line: #cfcfca;
+  --wf-chrome-active: #3a3a37;
+  --wf-stage-bg: #ececea;
+}
+
+[hidden] { display: none !important; }
+
+.wf-controls {
+  position: sticky; top: 0; z-index: 1000;
+  display: flex; flex-wrap: wrap; align-items: stretch; gap: 8px;
+  padding: 10px 16px; background: var(--wf-chrome-bg); border-bottom: 1px solid var(--wf-chrome-line);
+  font: 14px/1.6 Vazirmatn, Tahoma, sans-serif; color: var(--wf-chrome-ink); direction: rtl;
+  font-variant-numeric: normal;
+}
+.wf-controls select, .wf-controls button {
+  min-height: 44px; padding: 0 14px; white-space: nowrap;
+  font: inherit; color: var(--wf-chrome-ink); background: var(--wf-chrome-bg);
+  border: 1px solid var(--wf-chrome-line); border-radius: 8px; cursor: pointer;
+}
+.wf-controls select { flex: 1 1 12rem; min-width: 0; }
+.wf-controls [aria-pressed="true"] { background: var(--wf-chrome-active); color: var(--wf-chrome-bg); border-color: var(--wf-chrome-active); }
+.wf-controls .wf-group { display: flex; flex-wrap: wrap; align-items: stretch; gap: 6px; }
+/* State chips stay on one scrollable line so the chrome does not eat a phone screen. */
+.wf-controls .wf-states { flex: 1 1 100%; flex-wrap: nowrap; overflow-x: auto; order: 1; }
+.wf-trace { align-self: center; color: var(--wf-chrome-muted); font-size: 13px; direction: ltr; unicode-bidi: isolate; }
+
+.wf-report {
+  margin: 12px auto 0; max-width: calc(var(--wf-width) + 2px); padding: 10px 14px;
+  background: var(--wf-chrome-bg); color: var(--wf-chrome-ink); direction: rtl;
+  border: 1px dashed var(--wf-chrome-muted); border-radius: 10px; font: 13px/1.7 Vazirmatn, Tahoma, sans-serif;
+}
+.wf-report ul { margin: 6px 0 0; padding-inline-start: 18px; }
+
+.wf-stage { padding: 16px; background: var(--wf-stage-bg); min-height: 100vh; box-sizing: border-box; }
+.wf-frame {
+  position: relative; box-sizing: border-box; width: var(--wf-width); max-width: 100%; min-height: 640px; margin: 0 auto;
+  background: var(--wf-frame-bg, #ffffff); border: 1px solid var(--wf-chrome-line); border-radius: 16px;
+  overflow-x: auto; overflow-y: visible;
+}
+@media (max-width: 420px) {
+  .wf-stage { padding: 0; }
+  .wf-frame { border-radius: 0; border-inline: 0; }
+}

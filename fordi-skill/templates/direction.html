@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>انتخاب جهت بصری · {project}</title>
+<!-- One Google Fonts link carrying every face the cards use. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap">
+<style>
+  /* Page chrome stays neutral so only the cards carry identity. */
+  :root { --page: #f4f4f2; --ink: #1c1c1a; --muted: #62625d; --line: #d6d6d1; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--ink); font: 15px/1.8 Vazirmatn, Tahoma, sans-serif; }
+  header, main { max-width: 1200px; margin: 0 auto; padding: 16px; }
+  h1 { margin: 0; font-size: 1.4rem; }
+  .how { color: var(--muted); margin: 4px 0 0; }
+  .hand { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .demoted { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; color: var(--muted); font-size: 13px; }
+
+  /* A card is rendered in its own world: every value below comes from the card's own variables. */
+  .card { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; }
+  .card > .label { padding: 10px 14px; font-size: 13px; color: var(--muted); border-bottom: 1px solid var(--line); }
+  .card > .label b { color: var(--ink); }
+  .viewport { background: var(--c-bg); color: var(--c-ink); font-family: var(--c-font); padding: 16px; min-height: 360px; }
+  .viewport .display { font-family: var(--c-display, var(--c-font)); }
+  .facts { padding: 12px 14px; display: grid; gap: 6px; font-size: 13px; }
+  .facts dt { font-weight: 700; }
+  .facts dd { margin: 0 0 4px; color: var(--muted); }
+  .chips { display: flex; gap: 6px; padding: 0 14px 14px; }
+  .chips span { inline-size: 28px; block-size: 28px; border-radius: 50%; border: 1px solid var(--line); }
+  .canon { opacity: .85; }
+</style>
+</head>
+<body>
+<header>
+  <h1>جهت بصری {project}</h1>
+  <p class="how">{یک خط: کدام کارت سهم تاس است، کدام انتخاب fordi، و اینکه در چت یکی را انتخاب کنید یا «جسورتر»، «امن‌تر» یا «دوباره» بگویید}</p>
+</header>
+<main>
+  <div class="hand">
+
+    <!-- Repeat this article per card: lead, alternates, optional pick, then canon (class="card canon").
+         Only the --c-* variables and the viewport content change between cards. -->
+    <article class="card" style="--c-bg: {bg}; --c-ink: {ink}; --c-accent: {accent}; --c-font: {font}; --c-display: {display font};">
+      <div class="label"><b>{نام جهت}</b> · {سهم تاس | جایگزین | انتخاب fordi | استاندارد این دسته}</div>
+      <div class="viewport">
+        <!-- The product's real first screen in this world, with real Persian content. -->
+      </div>
+      <div class="chips"><span style="background: {bg}"></span><span style="background: {ink}"></span><span style="background: {accent}"></span></div>
+      <dl class="facts">
+        <dt>ایده</dt><dd>{…}</dd>
+        <dt>دنیای بصری</dt><dd>{…}</dd>
+        <dt>لحظه‌ی شاخص</dt><dd>{…}</dd>
+        <dt>ریسک</dt><dd>{…}</dd>
+      </dl>
+    </article>
+
+  </div>
+  <!-- Candidates the roll dealt but that lost: one line each, what the lead kept from them. -->
+  <div class="demoted"></div>
+</main>
+</body>
+</html>

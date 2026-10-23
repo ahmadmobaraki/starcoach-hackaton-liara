@@ -1,0 +1,31 @@
+/* fordi design tokens: the single source of visual truth.
+   Tailwind v4 @theme: each variable becomes utilities (bg-accent, text-ink, font-display, rounded-md,
+   shadow-card, ease-out, animate-enter). "fordi.mjs tokens" copies this block into the prototype,
+   and the same block drops into a real Tailwind v4 project unchanged. */
+@theme {
+  --font-sans: {Persian UI face}, Tahoma, sans-serif;
+  --font-display: {display face}, var(--font-sans);
+
+  --color-bg: {page background};
+  --color-surface: {raised surface};
+  --color-ink: {main text};
+  --color-muted: {secondary text, 4.5:1 on bg};
+  --color-line: {borders and dividers};
+  --color-accent: {primary action};
+  --color-accent-ink: {text on accent};
+  --color-danger: {error};
+  --color-success: {success};
+  --color-warning: {offline / pending};
+
+  --radius-sm: {…};
+  --radius-md: {…};
+  --radius-lg: {…};
+
+  --shadow-card: {offset and soft blur, never a zero-offset halo};
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-enter: enter 300ms var(--ease-out) both;
+  @keyframes enter {
+    from { opacity: 0; transform: translateY(8px); }
+  }
+}

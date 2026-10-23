@@ -1,0 +1,57 @@
+{
+  "name": "raahbar-liara",
+  "version": "0.1.0",
+  "private": true,
+  "description": "راهبر — دستیار هوشمند زیرساخت لیارا (MCP + Persian agent panel)",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "mcp": "tsx src/mcp/stdio.ts",
+    "mcp:inspect": "npx @modelcontextprotocol/inspector tsx src/mcp/stdio.ts",
+    "smoke": "tsx scripts/smoke.ts",
+    "demo:package": "tar -czf demo-site.tar.gz -C demo/sample-site .",
+    "smoke:http": "tsx scripts/smoke-http.ts",
+    "smoke:stdio": "tsx scripts/smoke-stdio.ts"
+  },
+  "dependencies": {
+    "@fontsource/vazirmatn": "^5.3.0",
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "adm-zip": "^0.6.1",
+    "clsx": "^2.1.1",
+    "dotenv": "^17.2.3",
+    "lucide-react": "^1.61.0",
+    "next": "15.5.28",
+    "openai": "^7.43.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "tailwind-merge": "^2.6.0",
+    "tar": "^7.5.22",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.3",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/adm-zip": "^0.6.0",
+    "@types/node": "^22.19.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@types/tar": "^7.0.87",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "15.5.28",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.5"
+  },
+  "engines": {
+    "node": ">=20.11"
+  }
+}
